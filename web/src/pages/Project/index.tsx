@@ -17,6 +17,7 @@ interface Project {
   name: string;
   about: string;
   instructions: string;
+  whatsapp: string;
   opening_hours: string;
   open_on_weekends: string;
   images: Array<{
@@ -42,6 +43,13 @@ const Project: React.FC = () => {
 
   if (!project) {
     return <p>Carregando</p>;
+  }
+
+  function goToWhatsapp(): void {
+    window.open(
+      `https://api.whatsapp.com/send?phone=55${project?.whatsapp}`,
+      '_blank',
+    );
   }
 
   return (
@@ -131,7 +139,11 @@ const Project: React.FC = () => {
               )}
             </div>
 
-            <button type="button" className="contact-button">
+            <button
+              type="button"
+              className="contact-button"
+              onClick={goToWhatsapp}
+            >
               <FaWhatsapp size={20} color="#FFF" />
               Entrar em contato
             </button>
