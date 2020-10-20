@@ -9,7 +9,7 @@ const About: React.FC = () => {
       <Sidebar />
 
       <Content>
-        <p className="page-title">Sobre nós</p>
+        <p className="page-title">Sobre</p>
 
         <section>
           <h1>Como surgiu o happy?</h1>
@@ -47,11 +47,11 @@ const About: React.FC = () => {
               href="https://www.figma.com/file/fWpZHM1ZaKuxzl0cc0dxk6/Happy-Web-(Copy)?node-id=48603%3A210"
             >
               aqui
-            </a>{' '}
-            (uma conta no Figma é necessária)! E para ver o meu projeto, é só
-            explorar esse site todinho! Espero que você goste, e sou aberto à
-            qualquer feedback, sugestão e críticas. Caso queira falar comigo, me
-            mande uma mensagem no linkedin clicando{' '}
+            </a>
+            ! E para ver o meu projeto, é só explorar esse site todinho! Espero
+            que você goste, e sou aberto à qualquer feedback, sugestão e
+            críticas. Caso queira falar comigo, me mande uma mensagem no
+            linkedin clicando{' '}
             <a
               rel="noopener noreferrer"
               target="_blank"
@@ -60,6 +60,24 @@ const About: React.FC = () => {
               aqui
             </a>
             !
+          </p>
+
+          <p className="social-media-links">
+            <a
+              rel="noopener noreferrer"
+              target="_blank"
+              href="https://www.instagram.com/gui.illescas/"
+            >
+              Instagram
+            </a>
+
+            <a
+              rel="noopener noreferrer"
+              target="_blank"
+              href="https://www.linkedin.com/in/guilherme-illescas"
+            >
+              Linkedin
+            </a>
           </p>
         </section>
       </Content>

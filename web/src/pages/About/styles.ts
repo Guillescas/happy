@@ -43,4 +43,12 @@ export const Content = styled.div`
       }
     }
   }
+
+  .social-media-links {
+    display: flex;
+    justify-content: space-between;
+    width: 200px;
+    margin: 0 auto;
+    text-align: center;
+  }
 `;
