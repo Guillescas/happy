@@ -22,25 +22,25 @@ interface Projects {
 
 const ProjectsList: React.FC = () => {
   const [projects, setProjects] = useState<Projects[]>([]);
-  // const [category, setCategory] = useState('');
+  const [category, setCategory] = useState('');
 
   useEffect(() => {
-    api.get('/projects').then(response => {
+    api.get(`/projects`).then(response => {
       setProjects(response.data);
     });
   }, []);
 
-  // function handleSubmit(): void {
-  //   api
-  //     .get(`/projects`, {
-  //       params: {
-  //         category,
-  //       },
-  //     })
-  //     .then(response => {
-  //       setProjects(response.data);
-  //     });
-  // }
+  function handleSubmit(): void {
+    api
+      .get(`/projects/list/${category}`, {
+        params: {
+          category,
+        },
+      })
+      .then(response => {
+        setProjects(response.data);
+      });
+  }
 
   return (
     <Container>
@@ -50,7 +50,7 @@ const ProjectsList: React.FC = () => {
         <p>Lista de projetos</p>
 
         <section>
-          {/* <Form onSubmit={handleSubmit}>
+          <Form onSubmit={handleSubmit}>
             <div className="input-block">
               <span>Categoria</span>
               <select
@@ -65,19 +65,27 @@ const ProjectsList: React.FC = () => {
                 >
                   Selecione uma opção
                 </option>
-                <option value="asilos">Asilos</option>
-                <option value="ambientalismo">Ambientalismo</option>
-                <option value="assistencia">
+                <option value="Asilos">Asilos</option>
+                <option value="Ambientalismo">Ambientalismo</option>
+                <option value="Assistencia">
                   Assistência e Serviços Sociais
                 </option>
-                <option value="educacao">Educação</option>
-                <option value="orfanato">Orfanato</option>
-                <option value="saude">Saúde</option>
+                <option value="Educacao">Educação</option>
+                <option value="Orfanato">Orfanato</option>
+                <option value="Saude">Saúde</option>
               </select>
             </div>
 
             <button type="submit">Buscar</button>
-          </Form> */}
+          </Form>
+
+          {projects.length === 0 ? (
+            <p className="no-projects">
+              Hmm parece que não existem projetos por aqui...
+            </p>
+          ) : (
+            ''
+          )}
 
           {projects.map(project => {
             return (

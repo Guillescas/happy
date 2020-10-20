@@ -73,15 +73,14 @@ export const Content = styled.div`
       bottom: 0;
       width: 150px;
       height: 48px;
+      padding: 0 16px;
+      margin-left: 32px;
 
       background: #f5f8fa;
       border: 1px solid #d3e2e5;
       outline: none;
       color: #5c8599;
-
       border-radius: 20px;
-      padding: 0 16px;
-      margin-left: 32px;
 
       cursor: pointer;
 
@@ -92,5 +91,9 @@ export const Content = styled.div`
       background: #d3e2e5;
       border: 1px solid #5c8599;
     }
+  }
+
+  .no-projects {
+    color: #5c8599;
   }
 `;
