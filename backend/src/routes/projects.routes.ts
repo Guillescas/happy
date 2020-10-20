@@ -9,7 +9,7 @@ const upload = multer(uploadConfig);
 
 projectsRouter.get('/', ProjectController.index);
 projectsRouter.get('/:id', ProjectController.show);
-projectsRouter.get('/:category', ProjectController.showByCategory);
+projectsRouter.get('/list/:category', ProjectController.showByCategory);
 projectsRouter.post('/', upload.array('images'), ProjectController.create);
 
 export default projectsRouter;
