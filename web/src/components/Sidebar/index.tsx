@@ -40,7 +40,7 @@ const Sidebar: React.FC = () => {
 
       <Link to="/about" className="menu-item">
         <FiInfo className="icon" size={24} />
-        Sobre nós
+        Sobre
       </Link>
     </Content>
   );
