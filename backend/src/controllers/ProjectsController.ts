@@ -96,10 +96,11 @@ export default {
 
     const projectsRepository = getRepository(Project);
 
-    const projects = await projectsRepository.findOne({
+    const projects = await projectsRepository.find({
       where: { category },
+      relations: ['images'],
     });
 
-    return response.json(projects);
+    return response.json(projectView.renderMany(projects));
   },
 };
